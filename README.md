@@ -3,7 +3,7 @@
 
 ---
 
-## Overview  
+##  Overview  
 This project investigates whether integrating three molecular layers — **miRNA**, **mRNA**, and **DNA methylation** — can predict **overall survival (OS)** in patients with non‑small cell lung cancer (NSCLC).  
 
 Two multi‑omics fusion strategies are compared:  
@@ -29,7 +29,7 @@ All analyses use **453 TCGA NSCLC patients** (LUAD + LUSC) with complete data ac
 
 ##  Notebook  
 
-The complete analysis is contained in **`survival_analysis.ipynb`**.  
+The complete analysis is contained in **`YOUR_NOTEBOOK.ipynb`**.  
 You can view it directly on GitHub, or open it in Google Colab / Jupyter.
 
 The notebook covers:  
@@ -42,7 +42,7 @@ The notebook covers:
 
 ---
 
-## Data  
+##  Data  
 
 **Required files (uploaded interactively via `files.upload()`):**  
 
@@ -97,7 +97,7 @@ All models use the same hyperparameters (fixed seeds for reproducibility) and st
 
 ---
 
-##  Interpretation  
+## Interpretation  
 
 - **Methylation** is the strongest individual omic layer for survival prediction.  
   The CpG probe `cg05496203` alone produces a highly significant survival split.  
@@ -110,22 +110,26 @@ Despite the significant survival signal, overall discriminative power is **modes
 ---
 
 ##  Figures  
-The notebook generates and saves the following figures as `.png` files:  
-- `early_k_selection.png` – AUC vs. number of features  
-- `early_roc.png` – ROC curves (RF vs. LR)  
-- `early_feature_importance.png` – Gini & permutation importance  
-- `early_km.png` – Kaplan‑Meier curves (top feature)  
-- `early_cox.png` – Cox hazard ratios  
-- `early_rsf_survival.png` – RSF predicted & observed survival  
-- `early_rsf_importance.png` – RSF permutation importance  
 
-(Plus corresponding `late_*` figures after running the late fusion section.)
+All output figures are located in the **`figures/`** folder.  
+
+| Figure | Description |
+|--------|-------------|
+| `figures/early_k_selection.png` | AUC vs. number of features (grid search) |
+| `figures/early_roc.png` | ROC curves – RF vs. LR |
+| `figures/early_feature_importance.png` | Gini and permutation importance |
+| `figures/early_km.png` | Kaplan‑Meier curves by top feature expression |
+| `figures/early_cox.png` | Cox hazard ratios with confidence intervals |
+| `figures/early_rsf_survival.png` | RSF predicted and observed survival curves |
+| `figures/early_rsf_importance.png` | RSF permutation importance |
+
+Corresponding `late_*` figures are generated after running the late fusion section and saved in the same folder.
 
 ---
 
 ##  How to Run  
 
-1. Clone the repository or download `survival_analysis.ipynb`.  
+1. Clone the repository or download `YOUR_NOTEBOOK.ipynb`.  
 2. Open it in [Google Colab](https://colab.research.google.com) (File → Upload notebook) or local Jupyter.  
 3. Run the first code cell to install required packages (`lifelines`, `scikit-survival`).  
 4. When prompted, upload the four CSV files (clinical, miRNA, mRNA, methylation).  
@@ -133,7 +137,7 @@ The notebook generates and saves the following figures as `.png` files:
 
 ---
 
-##  Dependencies  
+## Dependencies  
 All required libraries are installed in the first cell. The main ones are:  
 - `pandas`, `numpy`, `matplotlib`, `seaborn`  
 - `scikit-learn` (RandomForest, LogisticRegression, preprocessing, metrics)  
@@ -142,12 +146,36 @@ All required libraries are installed in the first cell. The main ones are:
 
 ---
 
-##  References  
-- Khadirnaikar, S., et al. (2023). *Multi‑omics integration identifies novel NSCLC subgroups and an autoencoder‑based classifier.*  
-- TCGA Research Network: [https://www.cancer.gov/tcga](https://www.cancer.gov/tcga)  
+## 🏛️ Affiliations  
+
+**[Sarah Salah]**  
+*Department of Medical Biochemistry, Faculty of Medicine, Alexandria University, Alexandria, Egypt*  
+*Email: s_salaheldeen20@alexmed.edu.eg*  
+**[Name]**  
+*Department of *  
+*Email:*  
+**[Name]**  
+*Department of *  
+*Email:*   
+**[Name]**  
+*Department of *  
+*Email:*  
+
+
 
 ---
 
-##  License  
-This project is open‑source under the [MIT License](LICENSE).  
-*(You may add a `LICENSE` file if desired.)*
+##  How to Cite  
+
+If you use this code, pipeline, or results in your own work, please cite this repository as:
+
+```bibtex
+@misc{yourname2025multiomics,
+  author = {Your Name},
+  title = {Multi-Omics Survival Prediction in NSCLC: Early vs. Late Fusion},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub Repository},
+  howpublished = {\url{https://github.com/YOUR_USERNAME/YOUR_REPO}},
+  note = {Accessed: YYYY-MM-DD}
+}
